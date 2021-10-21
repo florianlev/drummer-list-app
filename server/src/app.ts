@@ -6,7 +6,7 @@ const app: Express = express()
 
 const PORT: string | number = 4000
 
-app.listen(1000, () => {
+app.listen(PORT, () => {
 
     return console.log("server is listening on port ${port}")
 });
