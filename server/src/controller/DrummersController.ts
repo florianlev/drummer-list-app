@@ -6,8 +6,8 @@ const getDrummers = async (req: Request, res: Response): Promise<void> => {
         // Simulation provenance d'une BDD
         var jsonFile = require('./drummers.json');
         
-        let listDrummers: Array<Drummer> = Drummer.fromSerialized(jsonFile);
-        res.status(200).json({ listDrummers })
+        let drummers: Array<Drummer> = Drummer.fromSerialized(jsonFile);
+        res.status(200).json({ drummers })
     } catch (error) {
         console.log('error : ' + error)
         throw error

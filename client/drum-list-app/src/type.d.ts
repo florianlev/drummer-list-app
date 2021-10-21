@@ -6,14 +6,18 @@ interface IDrummer {
     nationality: string
     name: string
   }
+
+interface IDrummers{
+    drummers: IDrummer[]
+}
   
-  interface DrummerProps {
+  type DrummerProps = {
     drummer: IDrummer
   }
   
   type ApiDataType = {
     message: string
     status: string
-    todos: ITodo[]
-    todo?: ITodo
+    drummers: IDrummer[]
+    drummer?: IDrummer
   }

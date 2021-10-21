@@ -15,8 +15,8 @@ const getDrummers = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
     try {
         // Simulation provenance d'une BDD
         var jsonFile = require('./drummers.json');
-        let listDrummers = Drummer_1.Drummer.fromSerialized(jsonFile);
-        res.status(200).json({ listDrummers });
+        let drummers = Drummer_1.Drummer.fromSerialized(jsonFile);
+        res.status(200).json({ drummers });
     }
     catch (error) {
         console.log('error : ' + error);

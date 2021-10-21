@@ -3,7 +3,7 @@
     "name":"Buddy Rich",
     "description":"Il est né dans une famille juive du quartier de Brooklyn à New York. Son père découvrit que Buddy était familier avec le rythme, car il était capable de battre de façon rythmée à l'âge d'un an. Sa plus grande qualité était son habileté et sa rapidité sur des doigtés frisés (alternance : un coup main gauche, un coup main droite). Buddy a commencé à battre dans un théâtre de vaudeville à l'âge de 18 mois, surnommé alors Traps the Drum Wonder. À 11 ans, il était meneur de groupe.",
     "marks":["zidjian","ludwig"],
-    "style":["jazz"],
+    "styles":["jazz"],
     "nationality": "americain"
 },
 {
@@ -11,7 +11,7 @@
     "name":"tzst",
     "description":"tete",
     "marks":["tete"],
-    "style":["tete"],
+    "styles":["tete"],
     "nationality":"tete"
 }
 ]
