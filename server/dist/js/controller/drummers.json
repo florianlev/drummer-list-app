@@ -8,10 +8,47 @@
 },
 {
     "id": 2,
-    "name":"tzst",
+    "name":"Steve Gadd",
     "description":"tete",
     "marks":["tete"],
     "styles":["tete"],
     "nationality":"tete"
 }
+,
+{
+    "id": 3,
+    "name":"Jeff porcaro",
+    "description":"tete",
+    "marks":["tete"],
+    "styles":["tete"],
+    "nationality":"tete"
+}
+,
+{
+    "id": 4,
+    "name":"Brian blade",
+    "description":"tete",
+    "marks":["tete"],
+    "styles":["tete"],
+    "nationality":"tete"
+}
+,
+{
+    "id": 5,
+    "name":"Steve Gadd",
+    "description":"tete",
+    "marks":["tete"],
+    "styles":["tete"],
+    "nationality":"tete"
+}
+,
+{
+    "id": 6,
+    "name":"Ringo starr",
+    "description":"tete",
+    "marks":["tete"],
+    "styles":["tete"],
+    "nationality":"tete"
+}
+
 ]

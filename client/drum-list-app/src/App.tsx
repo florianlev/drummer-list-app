@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Drummer from './components/DrummersItem';
 import DrummersItem from './components/DrummersItem'
 import config from './config';
+import './App.scss';
 
 const App: React.FC = () => {
   const [drummers, setDrummers] = useState<IDrummers>()
@@ -32,15 +33,17 @@ const App: React.FC = () => {
   }
 
   return (
-    <main className='App'>
+    <div className='app-container'>
       <h1>My drummers</h1>
+      <div className="videos">
       {drummers?.drummers.map((drummer: IDrummer) => (
         <DrummersItem
           key={drummer.id}
           drummer={drummer}
         />
       ))}
-    </main>
+      </div>
+    </div>
   )
 }
 

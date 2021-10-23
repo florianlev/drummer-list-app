@@ -7,15 +7,17 @@ class Drummer {
     marks: string[]
     styles: string[]
     nationality: string
+    idVideo: string
 
 
-    constructor(id: number, name: string, marks: string[], description: string, styles: string[], nationality: string) {
+    constructor(id: number, name: string, marks: string[], description: string, styles: string[], nationality: string, idVideo: string) {
         this.id = id;
         this.name = name;
         this.marks = marks;
         this.description = description;
         this.styles = styles;
         this.nationality = nationality;
+        this.idVideo = idVideo;
     }
 
     private toObject() {
@@ -26,6 +28,7 @@ class Drummer {
             description: this.description,
             styles: this.styles,
             nationality: this.nationality,
+            idVideo: this.idVideo
         }
     }
 
@@ -33,7 +36,7 @@ class Drummer {
         return JSON.stringify(this.toObject());
     }
 
-    static fromSerialized(serialized: string) {
+    static fromSerialized(serialized: string) : Drummer[]{
         const drummersJson = JSON.parse(JSON.stringify(serialized));
         let listDrummers: Array<Drummer> = [];
         for (let i = 0; i < drummersJson.length; i++) {
@@ -43,7 +46,8 @@ class Drummer {
                 drummersJson[i].marks,
                 drummersJson[i].description,
                 drummersJson[i].styles,
-                drummersJson[i].nationality
+                drummersJson[i].nationality,
+                ""
             );
             listDrummers.push(objDrum);
         }

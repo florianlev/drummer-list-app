@@ -11,11 +11,18 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getDrummers = void 0;
 const Drummer_1 = require("../models/Drummer");
+const YoutubeController_1 = require("./YoutubeController");
 const getDrummers = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         // Simulation provenance d'une BDD
         var jsonFile = require('./drummers.json');
         let drummers = Drummer_1.Drummer.fromSerialized(jsonFile);
+        // idVideo youtube
+        for (let i = 0; i < drummers.length; i++) {
+            yield YoutubeController_1.YoutubeController.getFirstIdVideoBySearch(drummers[i].name)
+                .then(resp => drummers[i].idVideo = resp)
+                .catch((err) => drummers[i].idVideo = "NULL");
+        }
         res.status(200).json({ drummers });
     }
     catch (error) {

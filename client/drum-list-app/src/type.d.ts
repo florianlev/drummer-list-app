@@ -5,6 +5,7 @@ interface IDrummer {
     styles: string[]
     nationality: string
     name: string
+    idVideo: string
   }
 
 interface IDrummers{

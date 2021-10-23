@@ -4,15 +4,14 @@ type Props = DrummerProps
 
 const Drummer: React.FC<Props> = ({ drummer }) => {
   return (
-    <div className="Card">
-      <div className="Card--text">
-        <h1 className="drummName">{drummer.name}</h1>
-        <span className="drummDescription">{drummer.description}</span>
-      </div>
-      <div className="Card--button">
-        <button>
-          Go
-        </button>
+    <div className="videos__item">
+      <div className="video__image">
+        <a target="_blank">
+          <img src={`https://i4.ytimg.com/vi/${drummer.idVideo}/mqdefault.jpg`} />
+        </a>
+        <div className="video__footer">
+          <p>{drummer.name}</p>
+        </div>
       </div>
     </div>
   )

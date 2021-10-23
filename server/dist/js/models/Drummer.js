@@ -2,13 +2,14 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Drummer = void 0;
 class Drummer {
-    constructor(id, name, marks, description, styles, nationality) {
+    constructor(id, name, marks, description, styles, nationality, idVideo) {
         this.id = id;
         this.name = name;
         this.marks = marks;
         this.description = description;
         this.styles = styles;
         this.nationality = nationality;
+        this.idVideo = idVideo;
     }
     toObject() {
         return {
@@ -18,6 +19,7 @@ class Drummer {
             description: this.description,
             styles: this.styles,
             nationality: this.nationality,
+            idVideo: this.idVideo
         };
     }
     serialize() {
@@ -27,7 +29,7 @@ class Drummer {
         const drummersJson = JSON.parse(JSON.stringify(serialized));
         let listDrummers = [];
         for (let i = 0; i < drummersJson.length; i++) {
-            var objDrum = new Drummer(parseInt(drummersJson[i].id), drummersJson[i].name, drummersJson[i].marks, drummersJson[i].description, drummersJson[i].styles, drummersJson[i].nationality);
+            var objDrum = new Drummer(parseInt(drummersJson[i].id), drummersJson[i].name, drummersJson[i].marks, drummersJson[i].description, drummersJson[i].styles, drummersJson[i].nationality, "");
             listDrummers.push(objDrum);
         }
         return listDrummers;
