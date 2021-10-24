@@ -11,7 +11,7 @@ interface IDrummer {
 interface IDrummers{
     drummers: IDrummer[]
 }
-  
+
   type DrummerProps = {
     drummer: IDrummer
   }

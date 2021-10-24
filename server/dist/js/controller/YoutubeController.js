@@ -9,7 +9,7 @@ class YoutubeController {
     static getFirstIdVideoBySearch(search) {
         try {
             let idVideo = "";
-            var api_key = "AIzaSyCaBd4hU9UPcoL1O7YHHidn43IraBYYGDE";
+            var api_key = "AIzaSyCYvhL80MgUNnoXCXdapS5PJHu2FBtmLU0";
             const instance = axios_1.default.create({
                 baseURL: 'https://www.googleapis.com/',
                 timeout: 15000,

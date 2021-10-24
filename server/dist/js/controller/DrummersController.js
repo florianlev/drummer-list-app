@@ -9,9 +9,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getDrummers = void 0;
+exports.getDrummerById = exports.getDrummers = void 0;
 const Drummer_1 = require("../models/Drummer");
 const YoutubeController_1 = require("./YoutubeController");
+// get all drummers from JSON
 const getDrummers = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         // Simulation provenance d'une BDD
@@ -31,3 +32,22 @@ const getDrummers = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
     }
 });
 exports.getDrummers = getDrummers;
+// get drummer by id from JSON
+const getDrummerById = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        // Simulation provenance d'une BDD
+        var jsonFile = require('./drummers.json');
+        let drummers = Drummer_1.Drummer.fromSerialized(jsonFile);
+        let drummer = drummers.find(e => e.id === parseInt(req.params.id));
+        console.log(drummer);
+        yield YoutubeController_1.YoutubeController.getFirstIdVideoBySearch(drummer.name)
+            .then(resp => drummer.idVideo = resp)
+            .catch((err) => drummer.idVideo = "NULL");
+        res.status(200).json({ drummer });
+    }
+    catch (error) {
+        console.log('error : ' + error);
+        throw error;
+    }
+});
+exports.getDrummerById = getDrummerById;

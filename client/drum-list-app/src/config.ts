@@ -5,8 +5,8 @@ export default {
   api: {
     endpoints: {
       drummers: {
-        all: `${REST_API_URL}/drummers`
-        //id: (categoryId: string) => `${REST_API_URL}/category/${categoryId}`,
+        all: `${REST_API_URL}/drummers`,
+        id: (drummerId: string) => `${REST_API_URL}/drummers/${drummerId}`,
       }
     }
   },

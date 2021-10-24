@@ -1,10 +1,31 @@
 import React, { useEffect, useState } from 'react'
-import Drummer from './components/DrummersItem';
 import DrummersItem from './components/DrummersItem'
+import DrummerItemDetails from './components/DrummerItemDetails';
+import { Router, Link, Switch, Route } from "react-router-dom";
+import { createBrowserHistory } from 'history';
+
+
 import config from './config';
 import './App.scss';
+const history = createBrowserHistory();
 
-const App: React.FC = () => {
+
+function App() {
+  return (
+
+    <Router history={history}>
+      <div className='app-container'>
+        <h1>My drummers</h1>
+        <Switch>
+          <Route path="/" exact component={Home}></Route>
+          <Route path="/drummer/:id" component={DrummerItemDetails}></Route>
+        </Switch>
+      </div>
+    </Router>
+  )
+}
+
+const Home = () => {
   const [drummers, setDrummers] = useState<IDrummers>()
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState();
@@ -24,25 +45,23 @@ const App: React.FC = () => {
   }, [])
 
   if (loading) {
-    return <p>Data is loading...</p>;
+    return <p>Données en chargement ...</p>;
   }
 
   if (error || !Array.isArray(drummers?.drummers)) {
-    console.log(drummers)
-    return <p>There was an error loading your data!</p>;
+    return <p>Erreur de chargement des données ! </p>;
   }
 
   return (
-    <div className='app-container'>
-      <h1>My drummers</h1>
-      <div className="videos">
+    <div className="videos">
       {drummers?.drummers.map((drummer: IDrummer) => (
-        <DrummersItem
-          key={drummer.id}
-          drummer={drummer}
-        />
+        <Link to={`/drummer/${drummer.id.toString()}`}>
+          <DrummersItem
+            key={drummer.id}
+            drummer={drummer}
+          />
+        </Link>
       ))}
-      </div>
     </div>
   )
 }

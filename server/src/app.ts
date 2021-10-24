@@ -8,7 +8,7 @@ const PORT: string | number = 4000
 
 app.listen(PORT, () => {
 
-    return console.log("server is listening on port ${port}")
+    return console.log(`server is listening on port ${PORT}`)
 });
 
 app.use(cors());
