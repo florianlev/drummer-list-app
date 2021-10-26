@@ -1,11 +1,10 @@
 import axios from 'axios';
 
-
 class YoutubeController {
 
+    // get idVideo youtube
     static getFirstIdVideoBySearch(search: string) {
         try {
-            let idVideo: string = "";
             var api_key = "AIzaSyCYvhL80MgUNnoXCXdapS5PJHu2FBtmLU0";
             const instance = axios.create({
                 baseURL: 'https://www.googleapis.com/',

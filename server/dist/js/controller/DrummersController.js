@@ -15,10 +15,9 @@ const YoutubeController_1 = require("./YoutubeController");
 // get all drummers from JSON
 const getDrummers = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        // Simulation provenance d'une BDD
         var jsonFile = require('./drummers.json');
         let drummers = Drummer_1.Drummer.fromSerialized(jsonFile);
-        // idVideo youtube
+        // get id video on API youtube
         for (let i = 0; i < drummers.length; i++) {
             yield YoutubeController_1.YoutubeController.getFirstIdVideoBySearch(drummers[i].name)
                 .then(resp => drummers[i].idVideo = resp)
@@ -27,7 +26,6 @@ const getDrummers = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
         res.status(200).json({ drummers });
     }
     catch (error) {
-        console.log('error : ' + error);
         throw error;
     }
 });
@@ -35,17 +33,16 @@ exports.getDrummers = getDrummers;
 // get drummer by id from JSON
 const getDrummerById = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        // Simulation provenance d'une BDD
         var jsonFile = require('./drummers.json');
         let drummers = Drummer_1.Drummer.fromSerialized(jsonFile);
         let drummer = drummers.find(e => e.id === parseInt(req.params.id));
+        // get id video on API youtube
         yield YoutubeController_1.YoutubeController.getFirstIdVideoBySearch(drummer.name)
             .then(resp => drummer.idVideo = resp)
             .catch((err) => drummer.idVideo = "NULL");
         res.status(200).json({ drummer });
     }
     catch (error) {
-        console.log('error : ' + error);
         throw error;
     }
 });

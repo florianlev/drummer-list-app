@@ -6,9 +6,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.YoutubeController = void 0;
 const axios_1 = __importDefault(require("axios"));
 class YoutubeController {
+    // get idVideo youtube
     static getFirstIdVideoBySearch(search) {
         try {
-            let idVideo = "";
             var api_key = "AIzaSyCYvhL80MgUNnoXCXdapS5PJHu2FBtmLU0";
             const instance = axios_1.default.create({
                 baseURL: 'https://www.googleapis.com/',

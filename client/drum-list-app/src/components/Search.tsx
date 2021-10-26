@@ -11,7 +11,6 @@ interface IState {
     activeFilterMarks: string;
     activeFilterNationality: string;
     activeFilterStyle: string;
-
     showToogle: boolean;
 }
 
@@ -19,17 +18,17 @@ export default class Search extends React.Component<{}, IState> {
     public filterMarks: string[];
     public filterStyles: string[];
     public filterNationality: string[];
-    //public filterAll: string[];
 
     constructor(props: any) {
         super(props);
 
+        // fulter listing
         this.filterMarks = ['zildjian', 'sabian', 'paiste', 'promark', 'tama', 'yamaha', 'pearl', 'ludwig', 'gretsch'];
         this.filterStyles = ['rock', 'jazz', 'funk', 'metal', 'pop', 'jazz fusion', 'heavy'];
         this.filterNationality = ['français', 'anglais', 'allemand', 'americain', 'canadien'];
         this.state = { loading: true, drummers: null, error: false, activeFilterMarks: "", activeFilterNationality: "", activeFilterStyle: "", showToogle: false };
 
-        // On recupere au premier chargement les données de l'api
+        // get datas from API 
         fetch(config.api.endpoints.drummers.all)
             .then((response) => response.json())
             .then((data) => {
@@ -45,25 +44,26 @@ export default class Search extends React.Component<{}, IState> {
             });
     }
 
+    //event when change filter
     onFilterChange(filter: string, typeFilter: string) {
 
         switch (typeFilter) {
             case "marks":
-                this.setState({activeFilterMarks: filter})
+                this.setState({ activeFilterMarks: filter })
                 break;
             case "nationality":
-                this.setState({activeFilterNationality: filter})
+                this.setState({ activeFilterNationality: filter })
                 break;
             case "styles":
-                this.setState({activeFilterStyle: filter})
+                this.setState({ activeFilterStyle: filter })
                 break;
             case "All":
-                this.setState({activeFilterStyle: ""})
-                this.setState({activeFilterNationality: ""})
-                this.setState({activeFilterMarks: ""})
+                this.setState({ activeFilterStyle: "" })
+                this.setState({ activeFilterNationality: "" })
+                this.setState({ activeFilterMarks: "" })
 
                 break;
-    
+
         }
     }
 
@@ -77,22 +77,21 @@ export default class Search extends React.Component<{}, IState> {
             return <p>Erreur de chargement des données ! </p>;
         }
 
+
         const { activeFilterMarks, activeFilterNationality, activeFilterStyle } = this.state;
-        let filteredList : IDrummer[];
-        if (activeFilterMarks == "" && activeFilterNationality == "" && activeFilterStyle == "") 
-        {
+        let filteredList: IDrummer[];
+        if (activeFilterMarks == "" && activeFilterNationality == "" && activeFilterStyle == "") {
             filteredList = this.state.drummers.drummers;
-        } 
+        }
         else {
             console.log(this.state.drummers.drummers);
             filteredList = this.state.drummers.drummers
-            .filter((item: IDrummer) => (this.state.activeFilterNationality == "") || (this.state.activeFilterNationality == item.nationality) )
-            .filter((item: IDrummer) => (this.state.activeFilterMarks == "") ||(this.state.activeFilterMarks == item.marks))
-            .filter((item: IDrummer) => (this.state.activeFilterStyle == "") ||(this.state.activeFilterStyle == item.styles));
-           
+                .filter((item: IDrummer) => (this.state.activeFilterNationality == "") || (this.state.activeFilterNationality == item.nationality))
+                .filter((item: IDrummer) => (this.state.activeFilterMarks == "") || (this.state.activeFilterMarks == item.marks))
+                .filter((item: IDrummer) => (this.state.activeFilterStyle == "") || (this.state.activeFilterStyle == item.styles));
+
         }
 
-        console.log(filteredList)
         return (
             <div>
                 <button onClick={() => this.setState({ showToogle: !this.state.showToogle })}>Filtres: {!this.state.showToogle ? 'show' : 'hide'}</button>
@@ -170,7 +169,7 @@ export default class Search extends React.Component<{}, IState> {
                 }
                 <div className="videos">
                     {filteredList.map((drummer: IDrummer) => (
-                        <Link to={`/drummer/${drummer.id.toString()}`} style={{ color: 'inherit', textDecoration: 'inherit'}}>
+                        <Link to={`/drummer/${drummer.id.toString()}`} style={{ color: 'inherit', textDecoration: 'inherit' }}>
                             <DrummersItem
                                 key={drummer.id}
                                 drummer={drummer}
