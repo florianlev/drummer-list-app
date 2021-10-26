@@ -9,12 +9,5 @@ export default {
         id: (drummerId: string) => `${REST_API_URL}/drummers/${drummerId}`,
       }
     }
-  },
-  routes: {
-    ROOT: '/',
-    DASHBOARD: '/dashboard',
-    VIDEOS: '/videos',
-    HEADSET: '/headset/:id',
-    WIFI: '/wifi'
   }
 }

@@ -4,13 +4,13 @@ class Drummer {
     id: number
     name: string
     description: string
-    marks: string[]
-    styles: string[]
+    marks: string
+    styles: string
     nationality: string
     idVideo: string
 
 
-    constructor(id: number, name: string, marks: string[], description: string, styles: string[], nationality: string, idVideo: string) {
+    constructor(id: number, name: string, marks: string, description: string, styles: string, nationality: string, idVideo: string) {
         this.id = id;
         this.name = name;
         this.marks = marks;

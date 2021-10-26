@@ -2,53 +2,98 @@
     "id": 1,
     "name":"Buddy Rich",
     "description":"Il est né dans une famille juive du quartier de Brooklyn à New York. Son père découvrit que Buddy était familier avec le rythme, car il était capable de battre de façon rythmée à l'âge d'un an. Sa plus grande qualité était son habileté et sa rapidité sur des doigtés frisés (alternance : un coup main gauche, un coup main droite). Buddy a commencé à battre dans un théâtre de vaudeville à l'âge de 18 mois, surnommé alors Traps the Drum Wonder. À 11 ans, il était meneur de groupe.",
-    "marks":["zidjian","ludwig"],
-    "styles":["jazz"],
+    "marks":"zildjian",
+    "styles":"jazz",
     "nationality": "americain"
 },
 {
     "id": 2,
     "name":"Steve Gadd",
-    "description":"tete",
-    "marks":["tete"],
-    "styles":["tete"],
-    "nationality":"tete"
+    "description":"Stephen Kendall Gadd, né le 9 avril 1945 à Irondequoit, quartier de New York est un batteur, percussionniste et musicien de studio américain.",
+    "marks":"zildjian",
+    "styles":"funk",
+    "nationality":"americain"
 }
 ,
 {
     "id": 3,
     "name":"Jeff porcaro",
-    "description":"tete",
-    "marks":["tete"],
-    "styles":["tete"],
-    "nationality":"tete"
+    "description":"Jeffrey Thomas Porcaro, dit « Jeff », né le 1er avril 1954 à Hartford, dans le Connecticut, et mort le 5 août 1992 au Humana Hospital de West Hills à Los Angeles, en Californie, est un batteur américain.",
+    "marks":"tama",
+    "styles":"rock",
+    "nationality":"americain"
 }
 ,
 {
     "id": 4,
     "name":"Brian blade",
-    "description":"tete",
-    "marks":["tete"],
-    "styles":["tete"],
-    "nationality":"tete"
+    "description":"Brian Blade commence à se faire connaître en accompagnant Brad Mehldau et Joshua Redman. On a pu depuis l'entendre en « sideman » dans les formations de Pat Metheny, de Kenny Garrett, de Chris Potter, de Mark Turner, de David Binney, de Chick Corea et de John Patitucci. Depuis plusieurs années, il joue avec le groupe Wayne Shorter et on peut l'entendre dans l'album « Direction in Music  » (aux côtés de Michael Brecker, Roy Hargrove et Herbie Hancock).",
+    "marks":"ludwig",
+    "styles":"jazz",
+    "nationality":"americain"
 }
 ,
 {
     "id": 5,
-    "name":"Steve Gadd",
-    "description":"tete",
-    "marks":["tete"],
-    "styles":["tete"],
-    "nationality":"tete"
+    "name":"Jean philippe fanfan",
+    "description":"ean-Philippe Fanfant est issu d'une famille de musiciens guadeloupéens depuis trois générations1: il est le fils du chanteur et percussionniste Guy Fanfant, et le petit-fils du jazzman Roger Fanfant. Son frère, Thierry Fanfant, est bassiste.",
+    "marks":"tama",
+    "styles":"funk",
+    "nationality":"français"
 }
 ,
 {
     "id": 6,
     "name":"Ringo starr",
-    "description":"tete",
-    "marks":["tete"],
-    "styles":["tete"],
-    "nationality":"tete"
+    "description":"Sir Richard Starkey, mieux connu sous son nom de scène Ringo Starr, est un batteur, auteur-compositeur-interprète et acteur britannique né le 7 juillet 1940 à Liverpool.",
+    "marks":"promark",
+    "styles":"rock",
+    "nationality":"anglais"
+}
+,
+{
+    "id": 7,
+    "name":"John Bonham",
+    "description":"John Henry Bonham, dit Bonzo, né le 31 mai 1948 à Redditch, dans le Worcestershire, en Angleterre, et mort le 25 septembre 1980 à Clewer, dans le Berkshire, est un des batteurs les plus renommés de l'histoire du rock par sa technique, sa puissance, son sens du groove et son influence",
+    "marks":"ludwig",
+    "styles":"rock",
+    "nationality":"anglais"
+}
+,
+{
+    "id": 8,
+    "name":"Keith Moon",
+    "description":"Keith Moon, de son vrai nom Keith John Moon, né le 23 août 1946 à Wembley, en ancien comté du Middlesex, dans l'ouest de Londres, en Angleterre, au Royaume-Uni, et mort le 7 septembre 1978 à Mayfair, dans l'ouest de Londres, en Angleterre, au Royaume-Uni, est un batteur britannique.",
+    "marks":"Sabian",
+    "styles":"rock",
+    "nationality":"anglais"
+}
+,
+{
+    "id": 9,
+    "name":"Stewart Copeland",
+    "description":"Stewart Armstrong Copeland, né le 16 juillet 1952 à Alexandria, est un musicien et compositeur américain. Il est connu pour avoir été le batteur et fondateur du groupe The Police. Après leur séparation, il a composé des musiques de films. ",
+    "marks":"promark",
+    "styles":"pop",
+    "nationality":"americain"
+}
+,
+{
+    "id": 10,
+    "name":"Neil Peart",
+    "description":"Neil Ellwood Peart, O.C., né le 12 septembre 1952 à Hamilton en Ontario et mort le 7 janvier 2020 à Santa Monica en Californie, est un musicien et auteur canadien. Il a été le batteur et le principal parolier du groupe rock progressif Rush de 1974 jusqu'à son décès. ",
+    "marks":"pearl",
+    "styles":"rock",
+    "nationality":"canadien"
+}
+,
+{
+    "id": 11,
+    "name":"Elvin Jones",
+    "description":"Elvin Jones est un batteur de jazz américain. Il est le frère du pianiste Hank Jones et du trompettiste Thad Jones. Actif pendant sept décennies, il a côtoyé de nombreux musiciens en tant que sideman mais également en tant que leader de ses propres formations.",
+    "marks":"gretsch",
+    "styles":"jazz",
+    "nationality":"americain"
 }
 
 ]

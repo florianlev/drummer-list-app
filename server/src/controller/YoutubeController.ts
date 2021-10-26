@@ -1,4 +1,4 @@
-import axios, { AxiosResponse } from 'axios';
+import axios from 'axios';
 
 
 class YoutubeController {
@@ -18,9 +18,7 @@ class YoutubeController {
         } catch (error) {
             throw error;
         }
-
     }
-
 }
 export { YoutubeController }
 

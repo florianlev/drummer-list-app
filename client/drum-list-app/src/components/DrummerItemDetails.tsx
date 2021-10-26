@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import config from '../config';
-import { Col, Row } from 'react-bootstrap';
-
 
 const DrummerItemDetails: React.FC = () => {
 

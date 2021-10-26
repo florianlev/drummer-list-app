@@ -68,19 +68,19 @@ body {
         }
     }
 
-
-
     &__footer {
         display: flex;
         align-items: center;
         font-size: 14px;
-        height: 100px;
+        height: 120px;
 
         p {
             margin: 0;
             font-weight: 500;
-            padding: 6px;
+            padding: 18px;
             position: absolute;
+            padding-top: 65px;
+
         }
 
         p span {
@@ -90,6 +90,47 @@ body {
         h2 {
             padding-bottom: 70px;
             padding-left: 10px;
+            font-weight: 150;
+
         }
     }
+}
+
+
+// grid pour filtres
+$grid-width: 30rem; 
+$gutter-vertical: 1rem; 
+$gutter-horizontal: 4rem; 
+.row {
+    max-width: $grid-width;
+    margin: 0 auto;
+
+    &:not(:last-child) {
+        margin-bottom: $gutter-vertical;
+    }
+
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    [class^="col-"] {
+        float: left;
+        padding: 1rem;
+
+        &:not(:last-child) {
+            margin-right: $gutter-horizontal;
+        }
+    }
+
+    .col-1-of-3 {
+        width: calc((100% - 2 * $gutter-horizontal) / 6);
+    }
+}
+ul{
+    list-style-type: none;
+}
+li{
+    margin-top:5px;
 }

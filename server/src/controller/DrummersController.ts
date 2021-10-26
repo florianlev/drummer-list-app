@@ -31,14 +31,10 @@ const getDrummerById = async (req: Request, res: Response): Promise<void> => {
         let drummers: Array<Drummer> = Drummer.fromSerialized(jsonFile);
         let drummer: Drummer | any = drummers.find( e => e.id === parseInt(req.params.id));
 
-        console.log(drummer)
-
-
         await YoutubeController.getFirstIdVideoBySearch(drummer.name)
             .then(resp => drummer.idVideo = resp)
             .catch((err) => drummer.idVideo = "NULL");
   
-
         res.status(200).json({ drummer })
     } catch (error) {
         console.log('error : ' + error)

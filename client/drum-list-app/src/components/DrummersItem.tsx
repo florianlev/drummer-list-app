@@ -13,19 +13,13 @@ const Drummer: React.FC<Props> = ({ drummer }) => {
               <h2>{drummer.name}</h2>
               <p>
                 <span>
-                  Marques : {drummer.marks.map((element) => {
-                    return element + " "
-                  })
-                  }
+                  Marques : {drummer.marks}
                 </span>
                 <span>
                   Nationalité : {drummer.nationality}
                 </span>
                 <span>
-                  Styles : {drummer.styles.map((element) => {
-                    return element + " "
-                  })
-                  }
+                  Styles : {drummer.styles}
                 </span>
               </p>
             </div>

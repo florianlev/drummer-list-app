@@ -1,8 +1,8 @@
 interface IDrummer {
     id: number
     description: string
-    marks: string[]
-    styles: string[]
+    marks: string
+    styles: string
     nationality: string
     name: string
     idVideo: string
@@ -14,11 +14,4 @@ interface IDrummers{
 
   type DrummerProps = {
     drummer: IDrummer
-  }
-  
-  type ApiDataType = {
-    message: string
-    status: string
-    drummers: IDrummer[]
-    drummer?: IDrummer
   }

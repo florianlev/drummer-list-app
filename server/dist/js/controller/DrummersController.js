@@ -39,7 +39,6 @@ const getDrummerById = (req, res) => __awaiter(void 0, void 0, void 0, function*
         var jsonFile = require('./drummers.json');
         let drummers = Drummer_1.Drummer.fromSerialized(jsonFile);
         let drummer = drummers.find(e => e.id === parseInt(req.params.id));
-        console.log(drummer);
         yield YoutubeController_1.YoutubeController.getFirstIdVideoBySearch(drummer.name)
             .then(resp => drummer.idVideo = resp)
             .catch((err) => drummer.idVideo = "NULL");
